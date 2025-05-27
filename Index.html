@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Mobile viewport settings for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>EconArch - Service Request Portal</title>
+    <link rel="stylesheet" href="Styling.css">
+    <!-- MSAL.js library for Microsoft Entra ID authentication -->
+    <script src="https://alcdn.msauth.net/browser/2.24.0/js/msal-browser.min.js"></script>
+</head>
+<body>
+    <header class="header">
+         <!-- White background section for logo -->
+    <div class="header-logo-section">
+        <img src="logo-white_econarch-removebg-preview.png" 
+             alt="EconArch Logo" 
+             class="logo" />
+    </div>
+
+        <!-- Authentication elements -->
+       <!-- Blue background section for auth elements -->
+    <div class="header-auth-section">
+        <button id="loginButton" class="auth-button">Sign In</button>
+        <div id="welcomeMessage" class="welcome-message"></div>
+    </div>
+    </header>
+
+    <!-- Authentication prompt for unauthenticated users -->
+    <div id="authMessage" class="auth-message">
+        <p>Please sign in to access the service request portal.</p>
+    </div>
+
+    <!-- Main content (hidden until authenticated) -->
+    <div class="container" id="mainContent" style="display: none;">
+        <h1>Service Request Portal</h1>
+        
+        <div class="form-container">
+            <form id="serviceRequestForm">
+                <!-- Issue Type Dropdown -->
+                <div class="form-group">
+                    <label for="issueType">Case Title<span>*</span></label>
+                    <select id="issueType" name="issueType" required>
+                        <option value="" disabled selected>Select your issue type</option>
+                        <optgroup label="Microsoft Teams">
+                            <option value="Unable to open Microsoft Teams">Unable to open Microsoft Teams</option>
+                            <option value="Unable to sign into Microsoft Teams">Unable to sign into Microsoft Teams</option>
+                        </optgroup>
+                        <optgroup label="Outlook">
+                            <option value="Unable to send a mail">Unable to send a mail</option>
+                            <option value="Unable to open Outlook">Unable to open Outlook</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <!-- Case Description Field -->
+                <div class="form-group">
+                    <label for="caseDescription">Case Description<span>*</span></label>
+                    <textarea id="caseDescription" name="caseDescription" required 
+                            placeholder="Please provide detailed information about your issue"></textarea>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="buttons">
+                    <a href="https://econarch.com" class="btn btn-secondary" 
+                       aria-label="Return to EconArch website">Return to EconArch Website</a>
+                    <button type="submit" class="btn" 
+                            aria-label="Submit service request">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="success-modal">
+        <div class="success-content">
+            <div class="checkmark-circle">
+                <div class="checkmark"></div>
+            </div>
+            <div class="success-message">Your service request has been submitted successfully!</div>
+            <button class="ok-button" onclick="closeSuccessModal()">OK</button>
+        </div>
+    </div>
+
+    <!-- Application Scripts -->
+    <script src="Script.js"></script>
+</body>
+</html>

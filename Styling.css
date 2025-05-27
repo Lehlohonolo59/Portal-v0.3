@@ -1,0 +1,309 @@
+/* Base styles with improved accessibility */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdfd;
+    /* Increased base font size for better readability */
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+/* Header container */
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* White background logo section */
+.header-logo-section {
+    background:#fdfdfd;
+    padding: 15px 40px;
+    flex: 0 0 auto;
+}
+
+/* Blue background auth section */
+.header-auth-section {
+    background: #0066cc;
+    border-radius: 8px;
+    padding: 15px 40px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+/* Logo styling */
+.logo {
+    width: 180px;
+    height: auto;
+}
+
+/* Auth button styling */
+.auth-button {
+    color: white;
+    background: none;
+    border: 2px solid white;
+    padding: 8px 25px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-button:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* Welcome message styling */
+.welcome-message {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.auth-message {
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden until authentication required */
+}
+
+/* Main Content Container */
+.container {
+    max-width: 600px; /* Increased from 500px */
+    width: 90%; /* Responsive width */
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    margin-top: 40px;  /* Creates space below header */
+    padding: 30px 0;   /* Adds internal spacing */
+}
+
+/* Form Header */
+.container h1 {
+    background-color: #0066cc;
+    color: white;
+    margin: 0 0 -20px 0;
+    padding: 25px 25px 45px; /* Increased padding */
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    font-size: 28px; /* Larger font size */
+    font-weight: 500; /* Slightly bolder */
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+/* Form Container */
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px; /* Increased padding */
+    position: relative;
+    z-index: 2;
+    margin-top: 0;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 25px; /* Increased spacing */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px; /* Increased spacing */
+    font-weight: 600; /* Bolder labels */
+    font-size: 16px; /* Larger font size */
+    color: #222; /* Darker for better contrast */
+}
+
+label span {
+    color: #cc0000;
+}
+
+/* Input Fields */
+input, textarea, select {
+    width: 100%;
+    padding: 12px 15px; /* Increased padding */
+    border: 2px solid #ddd; /* Thicker border */
+    border-radius: 6px; /* Slightly larger radius */
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* Larger font size */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Custom Select Dropdown */
+select {
+    height: 50px; /* Taller select box */
+    background-color: white;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px; /* More room for arrow */
+}
+
+/* Textarea Specific Styles */
+textarea {
+    min-height: 150px; /* Taller textarea */
+    resize: vertical;
+}
+
+/* Form Buttons Container */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px; /* Increased spacing */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Button Base Styles */
+.btn {
+    padding: 12px 20px; /* Larger buttons */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600; /* Bolder text */
+    font-size: 16px; /* Larger font */
+    margin-bottom: 10px; /* Space when wrapped */
+    min-width: 180px; /* Minimum width for touch targets */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Secondary Button Styles */
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Primary Button Styles */
+button.btn {
+    background-color: #0066cc;
+    color: white;
+}
+
+/* Success Modal Styles */
+.success-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+
+.success-content {
+    background-color: white;
+    padding: 35px; /* Increased padding */
+    border-radius: 8px;
+    text-align: center;
+    max-width: 450px; /* Slightly wider */
+    width: 90%; /* Responsive width */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Checkmark Animation */
+.checkmark-circle {
+    width: 90px; /* Slightly larger */
+    height: 90px;
+    margin: 0 auto 25px;
+}
+
+.checkmark {
+    display: block;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    position: relative;
+    animation: scaleIn 0.3s ease-in-out;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    left: 32px;
+    top: 16px;
+    width: 28px;
+    height: 45px;
+    border: solid white;
+    border-width: 0 5px 5px 0; /* Thicker checkmark */
+    transform: rotate(45deg);
+}
+
+/* Success Message Text */
+.success-message {
+    font-size: 20px; /* Larger font */
+    color: #222; /* Darker for contrast */
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .container {
+        width: 95%; /* More edge space on mobile */
+    }
+    
+    .container h1 {
+        font-size: 24px; /* Slightly smaller on mobile */
+        padding: 20px 20px 40px;
+    }
+    
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+    
+    .btn {
+        width: 100%; /* Full width buttons */
+        margin-bottom: 15px;
+    }
+    
+    .success-content {
+        padding: 25px 20px;
+    }
+
+    /* Mobile adjustments for auth elements */
+    .auth-button {
+        margin-right: 10px;
+        padding: 8px 15px;
+    }
+    
+    .welcome-message {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
